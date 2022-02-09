@@ -1,0 +1,21 @@
+<div class="like-widget container"
+  (click)="like()"
+  (keyup.enter)="like()">
+  <fa-icon
+    role="button"
+    tabindex="0"
+    [attr.aria-describedby]="id"
+    size="1x"
+    [icon]="fonts.faThumbsUp">
+  </fa-icon>
+  <!-- aria-live: screen reader anuncia quando conteúdo da tag mudar
+       aria-atomic: screen reader lê todo conteúdo da tag quando mudar-->
+  <span
+    [attr.id]="id"
+    [attr.aria-label]="likes + ': people liked'"
+    class="like-counter"
+    aria-live="true"
+    aria-atomic="true">
+    {{ likes }}
+  </span>
+</div>
